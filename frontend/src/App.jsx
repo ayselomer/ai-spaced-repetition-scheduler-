@@ -1,9 +1,25 @@
-const App = () => {
-  return (
-    <div className='text-5xl'>
-      <h1>Hello World</h1>
-    </div>
-  )
-}
+import { createBrowserRouter, RouterProvider, Link, Outlet } from 'react-router-dom';
 
-export default App
+import RegistrationScreen from "./routes/registration/RegistrationScreen"
+import LoginScreen from './routes/login/LoginScreen';
+const Layout = () => (
+  <main>
+    <Outlet />
+  </main>
+)
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { path: "/register", element: <RegistrationScreen /> },
+      { path: "/", element: <LoginScreen /> }
+    ],
+  },
+]);
+
+// 4. Export the App with the RouterProvider
+export default function App() {
+  return <RouterProvider router={router} />;
+}
