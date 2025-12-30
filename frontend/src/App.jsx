@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider, Link, Outlet } from 'react-router-
 
 import RegistrationScreen from "./routes/registration/RegistrationScreen"
 import LoginScreen from './routes/login/LoginScreen';
+import ForgotPasswordScreen from './routes/forgotPassword/ForgotPasswordScreen';
 const Layout = () => (
   <main>
     <Outlet />
@@ -14,7 +15,8 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/register", element: <RegistrationScreen /> },
-      { path: "/", element: <LoginScreen /> }
+      { path: "/", element: <LoginScreen /> },
+      { path: "/forgot-password", element: <ForgotPasswordScreen /> }
     ],
   },
 ]);

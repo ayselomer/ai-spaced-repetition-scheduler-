@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { HiCalendarDateRange } from "react-icons/hi2";
 
-const LoginScreen = () => {
+const ForgotPasswordScreen = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     return (
@@ -9,9 +9,9 @@ const LoginScreen = () => {
             <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-8 flex flex-col items-center space-y-6">
                 <HiCalendarDateRange className="text-5xl text-indigo-600" />
                 <div className="text-center">
-                    <h1 className="text-2xl font-semibold">Welcome Back</h1>
+                    <h1 className="text-2xl font-semibold">Forgot your password?</h1>
                     <p className="text-sm text-gray-500">
-                        Sign in to your AI Scheduler account
+                        Enter your email to reset your password
 
                     </p>
                 </div>
@@ -26,28 +26,16 @@ const LoginScreen = () => {
                         }}
                         className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300"
                     />
-                    <label className="block text-sm font-medium text-gray-700 mb-2 mt-4">Password</label>
-                    <input
-                        value={password}
-                        placeholder="Enter your password."
-                        onChange={(e) => {
-                            setPassword(e.target.value)
-                            console.log(password)
-                        }}
-                        type="password"
-                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-300"
-                    />
-                    <div>
-                        <a href="/forgot-password" className="text-sm text-indigo-600 hover:underline float-right mt-2">Forgot Password?</a>
-                    </div>
-                    <button type="button" className="mt-4 w-full bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white py-2 rounded-lg hover:bg-indigo-700">Sign in</button>
+                    
+                    <button type="button" className="mt-4 w-full bg-[linear-gradient(135deg,#667eea_0%,#764ba2_100%)] text-white py-2 rounded-lg hover:bg-indigo-700">Submit</button>
                 </form>
-                <div className='text-sm text-gray-600'> 
-                    Don't have an account? <a href="/register" className="text-indigo-600 hover:underline">Register Now</a> 
+                <div>
+                    <a href="/" className="text-sm text-indigo-600 hover:underline">Back to Login</a>
                 </div>
+                
             </div>
         </div>
     )
 }
 
-export default LoginScreen
+export default ForgotPasswordScreen
